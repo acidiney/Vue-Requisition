@@ -14,7 +14,7 @@
          <td>{{user.id}}</td>
          <td>{{user.name}}</td>
          <td>{{user.email}}</td>
-         <td><a :href="user.website">{{user.website}}</a></td>
+         <td><a :href="transformLink(user.website)">{{user.website}}</a></td>
        </tr>
      </tbody>
    </table>
@@ -22,7 +22,10 @@
 </template>
 
 <script>
+import linkMixins from '@/link.mixins.js'
+
 export default {
+  mixins: [linkMixins],
   name: 'ReVueResource',
   data () {
     return {
